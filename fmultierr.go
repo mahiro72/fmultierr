@@ -23,7 +23,7 @@ func run(pass *analysis.Pass) (any, error) {
 
 	for ident := range pass.TypesInfo.Uses {
 		if checkFuncObj == pass.TypesInfo.ObjectOf(ident) {
-			pass.Reportf(ident.Pos(),"multierr.Errors found")
+			pass.Reportf(ident.Pos(), "multierr.Errors found")
 		}
 	}
 	return nil, nil

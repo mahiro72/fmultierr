@@ -13,15 +13,15 @@ import (
 func TestAnalyzer(t *testing.T) {
 	testdata := testutil.WithModules(t, analysistest.TestData(), nil)
 
-	t.Run("multierrのErrors関数が使われていた場合, 検出する",func(t *testing.T) {
+	t.Run("multierrのErrors関数が使われていた場合, 検出する", func(t *testing.T) {
 		analysistest.Run(t, testdata, fmultierr.Analyzer, "a")
 	})
 
-	t.Run("multierrが別名でimportされ、Errors関数が使われていた場合, 検出する",func(t *testing.T) {
+	t.Run("multierrが別名でimportされ、Errors関数が使われていた場合, 検出する", func(t *testing.T) {
 		analysistest.Run(t, testdata, fmultierr.Analyzer, "b")
 	})
 
-	t.Run("今回の検出対象と別のmultierrパッケージがErrors関数をもっていた場合、検出しない",func(t *testing.T) {
+	t.Run("今回の検出対象と別のmultierrパッケージがErrors関数をもっていた場合、検出しない", func(t *testing.T) {
 		analysistest.Run(t, testdata, fmultierr.Analyzer, "c")
 	})
 }
