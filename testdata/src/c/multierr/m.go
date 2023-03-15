@@ -1,0 +1,3 @@
+package multierr
+
+func Errors() {}
