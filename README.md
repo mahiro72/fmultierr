@@ -7,11 +7,11 @@ multierr.Errors関数が呼び出されている部分を特定する
 ## install
 
 ```sh
-go install github.com/mahiro72/multierr/cmd/multierr@latest
+go install github.com/mahiro72/fmultierr/cmd/multierr@latest
 ```
 
 ## Useage
 
 ```sh
-go vet -vettool=`which multierr` pkgname
+go vet -vettool=`which fmultierr` pkgname
 ```
